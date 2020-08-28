@@ -29,7 +29,7 @@ class BudgetList:
     def __next__(self):
         try:
             return self.iter_e.__next__()
-        except StopIteration as Stop:
+        except StopIteration as stop:
             return self.iter_o.__next__()
 
 
@@ -47,7 +47,7 @@ def main():
         print(entry)
 
     fig, ax = plt.subplots()
-    labels = ['Expense', 'Overages', 'Budget']
+    labels = ['Expenses', 'Overages', 'Budget']
     values = [myBudgetList.sum_expenses, myBudgetList.sum_overages, myBudgetList.budget]
 
     ax.bar(labels, values, color=['green', 'red', 'blue'])
